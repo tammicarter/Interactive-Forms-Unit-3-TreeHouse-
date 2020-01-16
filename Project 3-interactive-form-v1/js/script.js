@@ -20,7 +20,7 @@ else
     $('#other-title').hide();
 }
     });
-              $('#other-title').hide();
+    $('#other-title').hide();
 });
 
 //Hide all T-shirt colors until design is chosen matching color options with the design selected
@@ -56,6 +56,7 @@ else
    // dynamically hide option text added until focus when selected theme appears
 
 //Reset dropdown menu:
+
 // const selectTheme = 
 
 
