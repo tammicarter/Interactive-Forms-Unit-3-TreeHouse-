@@ -25,38 +25,50 @@ else
 
 //Hide all T-shirt colors until design is chosen matching color options with the design selected
        $('#color').hide();
+
        $('#design').change(function(){
-        
-    if($('#design').val() === "js puns")
+    
+        if($('#design').val() === "js puns")
+    
     {  
         $('#color').show("js puns");
         $('#color option[value="tomato"]').hide();
         $('#color option[value="steelblue"]').hide();
         $('#color option[value="dimgrey"]').hide();
-        //$('#color option[value="selecttheme"]').hide();
+        
     }
+    
     else
+
     {
-        $('#design').val()=== "heart js"
+        $('#design').val()=== "heart js, "
         
         $('#color').show("heart js");
+        $('#color option[value="tomato"]').show();
+        $('#color option[value="steelblue"]').show();
+        $('#color option[value="dimgrey"]').show();
         $('#color option[value="cornflowerblue"]').hide();
         $('#color option[value="darkslategrey"]').hide();
         $('#color option[value="gold"]').hide();
-        //$('#color option[value="selecttheme"]').hide();
-    }
         
-        });
+} 
 
-//adding "Please select T-shirt theme" to color options     
-   var option = document.createElement('option');
-        option.text = "Please select T-shirt theme"; 
-   document.querySelector('#color').add(option, 0);
+});
 
-   // dynamically hide option text added until focus when selected theme appears
+//disable all "#color"selections until a "#design" is chosen and show "Please Select a T-shirt theme" as a default choice
 
-//Reset dropdown menu:
+//dynamically adding "Please select T-shirt theme" to color options     
+//    var option = document.createElement('option');
+//         option.text = "Please select a T-shirt theme"; 
+//    document.querySelector('#color').add(option, 0) 
+   
+// dynamically hide option text added until focus when selected theme appears
 
-// const selectTheme = 
+  // const selectTheme = 
+  // $('#color').find('option:first').attr('selected', 'selected');
+ //    $('#design').val() === "selectTheme"
+ //    $('#color').show("selectTheme");
+
+
 
 
