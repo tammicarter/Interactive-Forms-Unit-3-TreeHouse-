@@ -4,8 +4,8 @@
 //Prevent any JQuery code from running before the document is finished loading and focus 1st field by default
 
 $(document).ready(function(){
-    $('form:first *:input[type!=hidden]:first').focus();  
-
+    // $('form:first *:input[type!=hidden]:first').focus();  
+    $('#name').focus();
 //Hide text box until "other" is chosen from the Job Role//
    
     $('#other-title').hide();
@@ -31,11 +31,12 @@ else
         if($('#design').val() === "js puns")
     
     {  
-        $('#color').show("js puns");
+        $('#color').show("js puns",);
         $('#color option[value="tomato"]').hide();
         $('#color option[value="steelblue"]').hide();
         $('#color option[value="dimgrey"]').hide();
-        
+
+      
     }
     
     else
@@ -43,32 +44,42 @@ else
     {
         $('#design').val()=== "heart js, "
         
-        $('#color').show("heart js");
+        $('#color').show("heart js",);
         $('#color option[value="tomato"]').show();
         $('#color option[value="steelblue"]').show();
         $('#color option[value="dimgrey"]').show();
         $('#color option[value="cornflowerblue"]').hide();
         $('#color option[value="darkslategrey"]').hide();
         $('#color option[value="gold"]').hide();
-        
-} 
+}
 
 });
 
-//disable all "#color"selections until a "#design" is chosen and show "Please Select a T-shirt theme" as a default choice
+//dynamically adding "Please select T-shirt theme" last in the color options dropdown    
+   var option = document.createElement('option');
+        option.text = "Please select a T-shirt theme"; 
+   document.querySelector('#color').add(option, 0);
 
-//dynamically adding "Please select T-shirt theme" to color options     
-//    var option = document.createElement('option');
-//         option.text = "Please select a T-shirt theme"; 
-//    document.querySelector('#color').add(option, 0) 
+//disable all "#color" selections until a "#design theme" is chosen and show "Please Select a T-shirt theme" as a default choice
+
+//store all checkboxes and add an event listener to checks
+function testClick (){ 
+    alert('you clicked me');  
+   let checkBox = document.querySelectorAll('input[type=checkbox]');
+   checkBox.addEventListener('click', function(){
    
-// dynamically hide option text added until focus when selected theme appears
+});
+   testClick(); 
+}
+ 
 
-  // const selectTheme = 
-  // $('#color').find('option:first').attr('selected', 'selected');
- //    $('#design').val() === "selectTheme"
- //    $('#color').show("selectTheme");
+//"Payment Info" section
 
+//Form validation:
+//No blanks allowed:
+//Email field must be a validly formatted e-mail address (*Exceeds* check that it's a real e-mail address).
+//User must select at least one checkbox under the "Register forActivities" section of the form.
+//If the selected payment option is "Credit Card," only accept numbers between 13 and 16 digits, a Zip Code *5 digits, and a 3 number CVV
 
 
 
