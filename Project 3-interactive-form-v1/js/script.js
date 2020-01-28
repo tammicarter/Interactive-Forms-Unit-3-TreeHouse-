@@ -35,7 +35,6 @@ else
         $('#color option[value="tomato"]').hide();
         $('#color option[value="steelblue"]').hide();
         $('#color option[value="dimgrey"]').hide();
-
       
     }
     
@@ -67,15 +66,33 @@ function testClick (){
     alert('you clicked me');  
    let checkBox = document.querySelectorAll('input[type=checkbox]');
    checkBox.addEventListener('click', function(){
-   
+    $( "input[type=checkbox][name=bar]:checked" ).val();
 });
    testClick(); 
 }
  
-
 //"Payment Info" section
 
-//Form validation:
+//Form validation: selects ans stores text input than validate Input
+// const userNameVal = document.getElementById("name");
+//     function isValidUsername(name) {
+//      return /^[a-z]+$/.test(name);
+//   }
+// usernameInput.addEventListener("input", createListener(isValidname));
+
+// const emailVal = document.getElementByID("mail");
+//   function isValidEmail(mail) {
+//        return /^[^@]+@[^@.]+\.[a-z]+$/i.test(mail);
+//    } 
+// emailInput.addEventListener("input", createListener(isValidmail));
+//
+// const creditCardVal= document.getElementById("cc-num")
+
+// const zipCodeVal = document.getElementById("zip")
+
+// const cvvVal = document.getElementById("cvv")
+
+
 //No blanks allowed:
 //Email field must be a validly formatted e-mail address (*Exceeds* check that it's a real e-mail address).
 //User must select at least one checkbox under the "Register forActivities" section of the form.
