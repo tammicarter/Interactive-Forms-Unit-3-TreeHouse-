@@ -24,11 +24,16 @@ else
 });
 
 //Hide all T-shirt colors until design is chosen matching color options with the design selected
+let option = document.createElement('option');
+    option.text = "Please select a T-shirt theme"; 
+    document.querySelector('#color').add(option, 0);
+
+    //    $('#color').hide();
        $('#color').hide();
 
        $('#design').change(function(){
-    
-        if($('#design').val() === "js puns")
+       
+if ($('#design').val() === "js puns")
     
     {  
         $('#color').show("js puns",);
@@ -38,54 +43,57 @@ else
       
     }
     
-    else
+else
 
     {
+
         $('#design').val()=== "heart js, "
         
         $('#color').show("heart js",);
-        $('#color option[value="tomato"]').show();
-        $('#color option[value="steelblue"]').show();
-        $('#color option[value="dimgrey"]').show();
         $('#color option[value="cornflowerblue"]').hide();
         $('#color option[value="darkslategrey"]').hide();
         $('#color option[value="gold"]').hide();
+          
 }
+
+
 
 });
 
-//dynamically adding "Please select T-shirt theme" last in the color options dropdown    
-   var option = document.createElement('option');
-        option.text = "Please select a T-shirt theme"; 
-   document.querySelector('#color').add(option, 0);
+//dynamically adding an HTML element to color options dropdown    
+//    var option = document.createElement('option');
+//         option.text = "Please select a T-shirt theme"; 
+//    document.querySelector('#color').add(option, 0);
 
 //disable all "#color" selections until a "#design theme" is chosen and show "Please Select a T-shirt theme" as a default choice
 
+
+
 //store all checkboxes and add an event listener to checks
-function testClick (){ 
-    alert('you clicked me');  
+function checkBox (){ 
+    alert('you clicked me');  //condition goes here
    let checkBox = document.querySelectorAll('input[type=checkbox]');
-   checkBox.addEventListener('click', function(){
-    $( "input[type=checkbox][name=bar]:checked" ).val();
+   checkBox.addEventListener('' , function(){
+    ("input[type=checkbox][name=bar]:checked").val();
 });
-   testClick(); 
+   checkBox(); 
 }
  
 //"Payment Info" section
 
-//Form validation: selects ans stores text input than validate Input
-// const userNameVal = document.getElementById("name");
+//Form validation: selects and stores text input than validate Input
+// const nameVal = document.getElementById("name");
 //     function isValidUsername(name) {
 //      return /^[a-z]+$/.test(name);
 //   }
-// usernameInput.addEventListener("input", createListener(isValidname));
+// //nameInput.addEventListener("input", createListener(isValidname));
 
 // const emailVal = document.getElementByID("mail");
 //   function isValidEmail(mail) {
 //        return /^[^@]+@[^@.]+\.[a-z]+$/i.test(mail);
 //    } 
 // emailInput.addEventListener("input", createListener(isValidmail));
-//
+
 // const creditCardVal= document.getElementById("cc-num")
 
 // const zipCodeVal = document.getElementById("zip")
