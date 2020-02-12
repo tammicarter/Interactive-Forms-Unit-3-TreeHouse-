@@ -6,6 +6,8 @@ $(document).ready(function(){
     $('form:first *:input[type!=hidden]:first').focus();  
     $('#name').focus();
 
+    //*Job Roles Section*//
+
 //Job Role Hide text box until "other" is chosen
     $('#other-title').hide();
 
@@ -22,62 +24,67 @@ else
     $('#other-title').hide();
 });
 
+   //*T-Shirt Section*//
+
 //disable all "#color" selections until a "#design theme" is chosen and show "Please Select a T-shirt theme" as a default choice using Global Var's//
-function tShirtOptions(){
-    document.getElementById("name").focus();
-    }
-    //onchange type function
-    tShirtOptions();
-    function selectOther(){
-    //    let showOther = document.getElementById('selectedOther');
-    //    let jobRole = document.getElementById('title');
-    //    showOther.style.display='none';
-    //    if(jobRole.value ==='other'){
-    //       showOther.style.display='block';
-    //    }
-    }
-    selectOther();
 
-    //onchange type function
-    function selectTheme(s1,s2){
-          var s1 = document.getElementById(s1);
-          var s2 = document.getElementById(s2);
-          s2.innerHTML = '';
+    $('#design').change(function(){
+   
+ 
+     if($('#design').val() === "js puns")
 
-          if(s1.value == "js puns"){
+ {  
+     $('#color').show("js puns");
+     $('#color option[value="tomato"]').hide();
+     $('#color option[value="steelblue"]').hide();
+     $('#color option[value="dimgrey"]').hide();
+     $('#color option[value="1"]').hide();
+     $('#color option[value="cornflowerblue"]').show();
+     $('#color option[value="darkslategrey"]').show();
+     $('#color option[value="gold"]').show();
+    
 
-             var optionArray = ["cornflowerblue|Cornflower Blue (JS Puns shirt only)","darkslategrey|Dark Slate Grey (JS Puns shirt only)","gold|Gold (JS Puns shirt only)"];
+ }
 
-          } else if(s1.value == "heart js"){
+ else
 
-             var optionArray = ["tomato|Tomato (I &#9829; JS shirt only)","steelblue|Steel Blue (I &#9829; JS shirt only)","dimgrey|Dim Grey (I &#9829; JS shirt only)"];
-          } 
+ {
+     $('#design').val()=== "heart js"
 
-          for(var option in optionArray){
-             var pair = optionArray[option].split("|");
-             var newOption = document.createElement("option");
-             newOption.value = pair[0];
-             newOption.innerHTML = pair[1];
-             s2.options.add(newOption);
-          }
-       }
-// Creating color Option
-        // let option = document.createElement('option');
-        //     option.text = "Please select a T-shirt theme"; 
-        //     document.querySelector('#color').add(option, 0);
+     $('#color').show("heart js");
+     $('#color option[value="tomato"]').show();
+     $('#color option[value="steelblue"]').show();
+     $('#color option[value="dimgrey"]').show();
+     $('#color option[value="cornflowerblue"]').hide();
+     $('#color option[value="darkslategrey"]').hide();
+     $('#color option[value="gold"]').hide();
+     $('#color option[value="1"]').hide();
+     
+ }
 
-// store all checkboxes and add an event listener to checks
-        function checkBox (){ 
-    alert('you clicked me');  //condition goes here
+     });
+   
+    //* Activity Section*//
+    
+// // store all checkboxes and add an event listener to checks
+        function checkBox(){ 
+    // test connection 
+    alert('you clicked me');  
+       //condition goes here
         let checkBox = document.querySelectorAll('input[type=checkbox]');
-            checkBox.addEventListener('onChange', function(){
-        ("input[type=checkbox][name=bar]:checked").val();
-        checkBox(); 
+            checkBox.addEventListener('onchange', function(){
+        ("input[type=checkbox][name=bar]:checked").val();      
 });
-
+        checkBox(); 
 }
+//* create and append an element that will display total costs
 
-//"Payment Info" section
+// const totalCost = document.createElement('Check Box Values');
+
+// totalCost.appendChild(createBox);
+
+
+//*Payment Info" section*//
 
 //Form validation: selects and stores text input than validate Input
 // const nameVal = document.getElementById("name");
@@ -99,14 +106,7 @@ function tShirtOptions(){
 // const cvvVal = document.getElementById("cvv")
 
 
-// //No blanks allowed:
-// //Email field must be a validly formatted e-mail address (*Exceeds* check that it's a real e-mail address).
-// //User must select at least one checkbox under the "Register forActivities" section of the form.
-// //If the selected payment option is "Credit Card," only accept numbers between 13 and 16 digits, a Zip Code *5 digits, and a 3 number CVV
 
-
-//Prevent any JQuery code from running before the document is finished loading and focus 1st field by default 
-//Hide text box until "other" is chosen from the Job Role//
 
 
 
