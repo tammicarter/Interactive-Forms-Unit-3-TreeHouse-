@@ -60,3 +60,5 @@ else
 //Reset dropdown menu:
 // const selectTheme = 
 //store all checkboxes and add an event listener to checks
+
+print(design);
